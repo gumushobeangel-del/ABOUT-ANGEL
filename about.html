@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #dbeafe, #f0f9ff);
+    color: #0f172a;
+  }
+
+  .about-section {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-container {
+    max-width: 850px;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    border-top: 6px solid #38bdf8;
+    animation: fadeIn 1s ease-in-out;
+    transition: 0.3s;
+  }
+
+  .about-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 34px;
+    color: #0284c7;
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #334155;
+  }
+
+  span {
+    color: #0284c7;
+    font-weight: bold;
+  }
+
+  .intro {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .goal {
+    background: #e0f2fe;
+    padding: 15px;
+    border-left: 5px solid #0284c7;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  .quote {
+    margin-top: 25px;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+    color: #475569;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<section class="about-section">
+  <div class="about-container">
+
+    <h2>About Me</h2>
+
+    <p class="intro">
+      Hello, I’m <span>Gumoshabe Angel Karungi</span>, an aspiring software engineer passionate about technology and problem-solving.
+    </p>
+
+    <p>
+      My journey started with curiosity — I always wanted to understand how websites and applications work behind the scenes.
+    </p>
+
+    <p>
+      I was raised by a <span>strong single mother</span> whose sacrifices and resilience shaped my mindset and taught me discipline and determination.
+    </p>
+
+    <p>
+      I have been building skills in <span>HTML, CSS, JavaScript, and Python</span> while working on small projects that improve my understanding of real-world development.
+    </p>
+
+    <p>
+      Outside coding, I enjoy <span>travelling, spending time with friends and family, and learning new things</span> that help me grow.
+    </p>
+
+    <p class="goal">
+      My goal is to become a full-stack developer who builds meaningful solutions that solve real problems and create impact.
+    </p>
+
+    <div class="quote">
+      “Success is built one small step at a time.”
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

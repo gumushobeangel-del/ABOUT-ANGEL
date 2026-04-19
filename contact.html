@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Section</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    .contact-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      color: #38bdf8;
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    .contact-card {
+      max-width: 600px;
+      margin: auto;
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .contact-card p {
+      margin-bottom: 15px;
+      color: #cbd5e1;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: white;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #38bdf8;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      transform: scale(1.05);
+      background: #0ea5e9;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+
+<section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+
+  <div class="contact-card">
+    <p>Feel free to reach out for collaborations or projects 👋</p>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p>gumushobeangel@gmail.com</p>
+      <p>Kampala, Uganda</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
