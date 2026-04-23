@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kevin Assistant</title>
+
+<style>
+  body {
+    margin: 0;
+    background: #0f172a;
+    color: #38bdf8;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .status {
+    margin-top: 20px;
+    color: #94a3b8;
+  }
+
+  button {
+    background: #38bdf8;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background: #0ea5e9;
+  }
+
+  .pulse {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+    background: rgba(56,189,248,0.2);
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="pulse"></div>
+  <h1>KEVIN ASSISTANT 🤖</h1>
+  <p class="status" id="status">Click the button and speak</p>
+
+  <button onclick="startListening()">Activate Kevin</button>
+</div>
+
+<script>
+  const status = document.getElementById("status");
+
+  function speak(text) {
+    window.speechSynthesis.cancel();
+
+    let speech = new SpeechSynthesisUtterance(text);
+    speech.rate = 1.4;
+    speech.pitch = 1;
+    speech.volume = 1;
+
+    speech.onstart = () => {
+      status.innerText = "Speaking... 🔊";
+    };
+
+    window.speechSynthesis.speak(speech);
+  }
+
+  function startListening() {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    recognition.lang = "en-US";
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.start();
+
+    status.innerText = "Listening... 🎤";
+
+    recognition.onresult = function(event) {
+      let command = event.results[0][0].transcript.toLowerCase();
+      status.innerText = "You said: " + command;
+
+      processCommand(command);
+    };
+  }
+
+  function processCommand(command) {
+
+    status.innerText = "Processing... ⚡";
+
+    if (command.includes("hello")) {
+      speak("Hello Angel. I am Kevin, your AI assistant.");
+    }
+
+    else if (command.includes("your name")) {
+      speak("I am Kevin Assistant, your portfolio AI.");
+    }
+
+    else if (command.includes("open google")) {
+      speak("Opening Google");
+      window.open("https://www.google.com");
+    }
+
+    else if (command.includes("open youtube")) {
+      speak("Opening YouTube");
+      window.open("https://www.youtube.com");
+    }
+
+    else if (command.includes("time")) {
+      let time = new Date().toLocaleTimeString();
+      speak("The time is " + time);
+    }
+
+    else if (
+      command.includes("about angel") ||
+      command.includes("who is angel") ||
+      command.includes("tell me about angel") ||
+      command.includes("angel")
+    ) {
+      speak("Angel is a software engineering and artificial intelligence enthusiast building intelligent systems and modern applications.");
+    }
+
+    else if (
+      command.includes("family") ||
+      command.includes("background") ||
+      command.includes("your family")
+    ) {
+      speak("Angel was raised by a strong single mother whose sacrifices shaped her discipline, strength, and determination.");
+    }
+
+    else if (
+      command.includes("skills") ||
+      command.includes("abilities")
+    ) {
+      speak("Angel has skills in HTML, CSS, JavaScript, Python and is learning artificial intelligence and web development.");
+    }
+
+    else if (
+      command.includes("goal") ||
+      command.includes("future")
+    ) {
+      speak("Angel’s goal is to become a professional software engineer and AI developer building real world intelligent systems.");
+    }
+
+    else {
+      speak("I did not understand that command.");
+    }
+  }
+</script>
+
+</body>
+</html>
