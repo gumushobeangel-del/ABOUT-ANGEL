@@ -1,19 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Angel Karungi | Skills</title>
 
 <style>
   body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #dbeafe, #f0f9ff);
-    color: #0f172a;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
   }
 
-  /* HERO */
+  /* ===== AI BACKGROUND (same as main site) ===== */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image:
+      linear-gradient(rgba(56,189,248,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56,189,248,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveGrid 20s linear infinite;
+    z-index: -1;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(56,189,248,0.12) 2px, transparent 2px);
+    background-size: 80px 80px;
+    animation: floatDots 18s linear infinite;
+    z-index: -1;
+  }
+
+  @keyframes moveGrid {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px,-200px); }
+  }
+
+  @keyframes floatDots {
+    from { transform: translateY(0); }
+    to { transform: translateY(-200px); }
+  }
+
+  /* ===== HERO ===== */
   .hero {
     text-align: center;
     padding: 80px 20px 40px;
@@ -21,7 +61,7 @@
 
   .hero h1 {
     font-size: 42px;
-    color: #0284c7;
+    color: #38bdf8;
   }
 
   .hero p {
@@ -29,15 +69,15 @@
     margin: auto;
     font-size: 16px;
     line-height: 1.8;
-    color: #475569;
+    color: #cbd5e1;
   }
 
   .hero span {
-    color: #0284c7;
+    color: #38bdf8;
     font-weight: bold;
   }
 
-  /* SECTION */
+  /* ===== SECTION ===== */
   .section {
     padding: 50px 20px;
     display: flex;
@@ -46,49 +86,45 @@
 
   .container {
     max-width: 950px;
-    background: white;
+    background: #1e293b;
     padding: 40px;
     border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    border-top: 6px solid #38bdf8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border-top: 4px solid #38bdf8;
     animation: fadeIn 1s ease-in-out;
   }
 
   h2 {
     text-align: center;
-    color: #0284c7;
+    color: #38bdf8;
     font-size: 32px;
     margin-bottom: 15px;
   }
 
-  .intro {
-    text-align: center;
-    color: #475569;
-    margin-bottom: 25px;
-    line-height: 1.8;
-  }
-
   p {
-    line-height: 1.9;
-    color: #334155;
+    color: #cbd5e1;
     margin-bottom: 15px;
     font-size: 15.5px;
   }
 
   span {
-    color: #0284c7;
+    color: #38bdf8;
     font-weight: bold;
   }
 
-  /* CATEGORY */
+  .intro {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  /* ===== SKILL CARDS ===== */
   .category {
     margin-top: 30px;
     font-size: 18px;
-    color: #0284c7;
+    color: #38bdf8;
     font-weight: bold;
   }
 
-  /* GRID */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -97,11 +133,12 @@
   }
 
   .card {
-    background: #e0f2fe;
+    background: #0f172a;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
+    border: 1px solid rgba(56,189,248,0.2);
     transition: 0.3s ease;
     cursor: pointer;
   }
@@ -109,19 +146,18 @@
   .card:hover {
     transform: translateY(-6px);
     background: #38bdf8;
-    color: white;
+    color: black;
+    box-shadow: 0 0 20px rgba(56,189,248,0.4);
   }
 
-  /* INFO BOX */
   .box {
-    background: #f0f9ff;
+    background: rgba(56,189,248,0.08);
     padding: 15px;
-    border-left: 5px solid #38bdf8;
+    border-left: 4px solid #38bdf8;
     border-radius: 8px;
     margin: 15px 0;
   }
 
-  /* ANIMATION */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(25px); }
     to { opacity: 1; transform: translateY(0); }
@@ -131,66 +167,66 @@
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <h1>My Skills & Expertise</h1>
   <p>
-    I am <span>Gumoshabe Angel Karungi</span>, an aspiring software engineer and creative makeup artist.
-    My skills combine <span>technology, creativity, and problem-solving</span> to shape my journey in both digital development and beauty artistry.
+    I am <span>Gumoshabe Angel Karungi</span>, an aspiring
+    <span>Software Engineer and AI enthusiast</span> focused on building intelligent systems,
+    modern applications, and creative digital solutions.
   </p>
 </div>
 
-<!-- SKILLS -->
 <section class="section">
   <div class="container">
 
     <h2>What I Am Skilled In</h2>
 
     <p class="intro">
-      My skills are still growing, but I am focused, consistent, and dedicated to becoming better every day. I believe that learning never stops, especially in technology and creative industries.
+      My skills are continuously growing as I learn software engineering and artificial intelligence.
+      I focus on combining logic, creativity, and problem-solving.
     </p>
 
     <p>
-      In technology, I am learning how websites and applications are built from scratch. I enjoy understanding how code works behind the scenes and how developers use logic to create real-world solutions.
+      I enjoy understanding how websites and applications are built from scratch using code and logic.
+      I also explore how systems think and respond intelligently using AI concepts.
     </p>
 
     <div class="box">
-      I am currently improving my skills in <span>HTML, CSS, JavaScript, and Python</span> — the core technologies used to build modern websites and applications.
+      I am currently improving my skills in
+      <span>HTML, CSS, JavaScript, Python, and AI basics</span>.
     </div>
 
     <p>
-      These technologies allow me to design user interfaces, create interactive websites, and explore how software systems communicate with each other. I also enjoy learning how to make websites responsive so they work on all devices.
+      These technologies help me build responsive websites, interactive systems,
+      and explore how artificial intelligence can be applied in real-world solutions.
     </p>
-
 
     <div class="category">💻 Technical Skills</div>
     <div class="grid">
       <div class="card">HTML</div>
       <div class="card">CSS</div>
       <div class="card">Python</div>
-      <div class="card">Responsive Design</div>
+      <div class="card">JavaScript</div>
+      <div class="card">AI Basics</div>
+      <div class="card">SQL</div>
     </div>
 
     <div class="box">
-      Technology is powerful because it allows me to solve problems, automate tasks, and create digital experiences that can help people in everyday life.
+      Technology allows me to solve real problems, automate tasks, and build intelligent systems
+      that improve everyday life.
     </div>
 
-
-    <div class="category">🎨 Creative Skills</div>
+    <div class="category">🧠 AI & Future Skills</div>
     <div class="grid">
-      <div class="card">Makeup Artistry</div>
-      <div class="card">Color Matching</div>
-      <div class="card">Beauty Styling</div>
-      <div class="card">Creativity</div>
-      <div class="card">Attention to Detail</div>
-    </div>
-
-    <div class="box">
-      Makeup artistry is another passion of mine. It allows me to express creativity through beauty, enhance confidence, and transform ideas into visual art.
+      <div class="card">Machine Learning Basics</div>
+      <div class="card">Problem Solving</div>
+      <div class="card">Data Thinking</div>
+      <div class="card">System Design</div>
     </div>
 
     <p>
-      Both technology and makeup artistry require patience, creativity, and attention to detail. While coding builds logical thinking, makeup builds artistic expression — and I enjoy mastering both worlds.
+      My goal is to become a skilled software engineer and AI developer who builds systems
+      that are both intelligent and impactful.
     </p>
 
   </div>

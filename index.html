@@ -1,291 +1,329 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angel Karungi | Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angel Karungi | Portfolio</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: #020617;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav h2 { color: #38bdf8; }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-      transition: color .3s;
-    }
-    nav a:hover { color: #38bdf8; }
-
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 40px;
-      flex-wrap: wrap;
-    }
-
-    .hero-text { max-width: 500px; }
-
-    .hero-text h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    .hero-text span { color: #38bdf8; }
-
-    .hero img {
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: top center; /* keeps face centered */
-      border: 5px solid #38bdf8;
-      box-shadow: 0 0 25px rgba(56,189,248,0.5);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    section {
-      padding: 50px 40px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #38bdf8;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
-      transition: transform .3s ease, box-shadow .3s ease; /* added */
-    }
-
-    /* Hover effect for project cards */
-    .projects .card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 10px 30px rgba(56,189,248,0.4);
-    }
-
-    .highlight {
-      color: #38bdf8;
-      font-weight: bold;
-    }
-
-    .emphasis {
-      background: rgba(56,189,248,0.15);
-      padding: 2px 6px;
-      border-radius: 6px;
-    }
-
-    .skills span, .hobbies span {
-      display: inline-block;
-      background: #38bdf8;
-      color: black;
-      padding: 6px 12px;
-      border-radius: 20px;
-      margin: 5px;
-      font-size: 13px;
-      transition: transform .2s;
-    }
-    .skills span:hover, .hobbies span:hover { transform: scale(1.1); }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      font-size: 14px;
-      color: #94a3b8;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      background: #38bdf8;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: transform .2s;
-      font-size: 15px;
-    }
-    button:hover { transform: scale(1.03); }
-    button:hover { transform: scale(1.05); }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
-    }
 
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        line-height: 1.6;
+      }
 
-  
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      outline: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
       nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background: #020617;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      nav h2 {
+        color: #38bdf8;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 14px;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #38bdf8;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 40px;
+        flex-wrap: wrap;
+      }
+
+      .hero-text {
+        max-width: 500px;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        animation: fadeInUp 1s ease forwards;
+      }
+
+      .hero-text span {
+        color: #38bdf8;
+      }
+
+      .hero img {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top center;
+        border: 5px solid #38bdf8;
+        box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+        animation: float 3s ease-in-out infinite;
+      }
+
+      section {
+        padding: 50px 40px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #38bdf8;
+      }
+
+      .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .projects .card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+      }
+
+      .highlight {
+        color: #38bdf8;
+        font-weight: bold;
+      }
+
+      .emphasis {
+        background: rgba(56, 189, 248, 0.15);
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+
+      .skills span,
+      .hobbies span {
+        display: inline-block;
+        background: #38bdf8;
+        color: black;
+        padding: 6px 12px;
+        border-radius: 20px;
+        margin: 5px;
+        font-size: 13px;
+        transition: transform 0.2s;
+      }
+
+      .skills span:hover,
+      .hobbies span:hover {
+        transform: scale(1.1);
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #020617;
+        font-size: 14px;
+        color: #94a3b8;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #38bdf8;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: transform 0.2s;
+        font-size: 15px;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .contact-form {
+        display: flex;
         flex-direction: column;
         gap: 10px;
       }
 
-      .hero {
-        flex-direction: column;
-        text-align: center;
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        outline: none;
       }
 
-      .hero img {
-        margin-top: 20px;
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero img {
+          margin-top: 20px;
+        }
       }
-    }
+    </style>
+  </head>
 
-  </style>
-</head>
-<body>
+  <body>
+    <nav>
+      <h2>Angel</h2>
+      <div>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
 
-<nav>
-  <h2>Angel</h2>
-  <div>
-    <a href="about.html">About</a>
-    <a href="skills.html">Skills</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Hello, I'm <span>Gumoshabe Angel Karungi</span></h1>
+        <p>
+          A passionate Software Engineering and AI enthusiast focused on building
+          intelligent systems, modern web applications, and solving real-world problems using technology.
+        </p>
+      </div>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>Hello, I'm <span>Gumoshabe Angel Karungi</span></h1>
-    <p>A passionate aspiring software engineer who enjoys building websites and learning new technologies.</p>
-  </div>
+      <img src="images/angu.png" alt="My Photo" />
+    </section>
 
-  
-  <img src="images/angu.png" alt="My Photo">
-</section>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>
+          I was raised by a <span class="highlight">single mother</span> whose
+          strength and sacrifices shaped my life.
+        </p>
 
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>I was raised by a <span class="highlight">single mother</span> whose strength and sacrifices shaped the foundation of my life. She carried responsibilities that most people never see, yet she never stopped showing <span class="emphasis">love, hope, and determination</span>.</p>
+        <p>
+          My passion for technology started from curiosity and has grown into a strong desire
+          to become a <span class="highlight">software engineer</span>.
+        </p>
 
-    <p>Growing up, I learned early that success does not come easy. There were challenges, moments of doubt, and times when giving up felt easier. But those experiences built my <span class="highlight">resilience</span> and taught me to stay focused on my goals.</p>
+        <p>
+          Today, I am focused on growing as a 
+          <span class="highlight">Software Engineer and AI Developer</span>.
+          I am learning how to build intelligent systems, work with data, and create applications
+          that solve real-world problems using 
+          <span class="highlight">Artificial Intelligence</span>.
+        </p>
+      </div>
+    </section>
 
-    <p>My passion for technology started from curiosity—wanting to understand how things work. That curiosity has now grown into a strong desire to become a <span class="highlight">software engineer</span> and create solutions that can help people and businesses.</p>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Python</span>
+        <span>JavaScript</span>
+        <span>SQL</span>
+        <span>AI Basics</span>
+        <span>Data Analysis</span>
+      </div>
+    </section>
 
-    <p>Today, I am continuously learning, building projects, and improving my skills. My goal is to use technology to create opportunities and make a meaningful impact in the world.</p>
-  </div>
-</section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="card skills">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>Python</span>
-  </div>
-</section>
+        <div class="card">
+          <h3>Expense Tracker</h3>
+          <p>
+            A full-stack web application that tracks income and expenses,
+            performs data analysis, and provides insights into spending patterns.
+          </p>
+        </div>
 
-<section id="hobbies">
-  <h2>Hobbies</h2>
-  <div class="card hobbies">
-    <span>Travelling</span>
-    <span>Coding</span>
-    <span>Spending Time with Friends</span>
-    <span>Spending Time with Family</span>
-    <span>Dancing and singing</span>
-  </div>
-</section>
+        <div class="card">
+          <h3>Sales Form</h3>
+          <p>
+            A responsive system designed to capture and validate sales records,
+            improving data accuracy and supporting analytics.
+          </p>
+        </div>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="card">
-      <h3>Expense Tracker</h3>
-      <p>A web-based system that helps users track their income and expenses efficiently. It allows recording transactions, calculating totals, and giving a clear overview of financial activity.</p>
-    </div>
+        <div class="card">
+          <h3>Portfolio Website</h3>
+          <p>
+            A modern responsive portfolio showcasing my journey in Software Engineering and AI.
+          </p>
+        </div>
 
-    <div class="card">
-      <h3>Sales Form</h3>
-      <p>A responsive and user-friendly form designed to capture sales data accurately. It improves data organization and makes it easier to manage business records.</p>
-    </div>
+        <div class="card">
+          <h3>AI Chatbot (Beginner)</h3>
+          <p>
+            A simple chatbot built with Python that responds to user input and demonstrates
+            basic AI and natural language processing concepts.
+          </p>
+        </div>
 
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>This personal portfolio showcases my skills, projects, and journey in tech. It is designed with modern UI principles and responsive layouts.</p>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
 
-<footer>
-  <p>© 2026 Angel Karungi | All Rights Reserved</p>
-</footer>
-
-</body>
+    <footer>
+      <p>© 2026 Angel Karungi | All Rights Reserved</p>
+    </footer>
+  </body>
 </html>

@@ -3,14 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Me</title>
+<title>About Me | Angel Karungi</title>
 
 <style>
   body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #dbeafe, #f0f9ff);
-    color: #0f172a;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* AI background (same style as main page) */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: 
+      linear-gradient(rgba(56,189,248,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56,189,248,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveGrid 20s linear infinite;
+    z-index: -1;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(56,189,248,0.15) 2px, transparent 2px);
+    background-size: 80px 80px;
+    animation: floatDots 18s linear infinite;
+    z-index: -1;
+  }
+
+  @keyframes moveGrid {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px,-200px); }
+  }
+
+  @keyframes floatDots {
+    from { transform: translateY(0); }
+    to { transform: translateY(-200px); }
   }
 
   .about-section {
@@ -21,36 +61,35 @@
 
   .about-container {
     max-width: 850px;
-    background: white;
+    background: #1e293b;
     padding: 40px;
     border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    border-top: 6px solid #38bdf8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border-top: 4px solid #38bdf8;
     animation: fadeIn 1s ease-in-out;
     transition: 0.3s;
   }
 
   .about-container:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 40px rgba(56,189,248,0.2);
   }
 
   h2 {
     text-align: center;
     font-size: 34px;
-    color: #0284c7;
+    color: #38bdf8;
     margin-bottom: 25px;
   }
 
   p {
     font-size: 16px;
-    line-height: 1.8;
+    color: #cbd5e1;
     margin-bottom: 15px;
-    color: #334155;
   }
 
   span {
-    color: #0284c7;
+    color: #38bdf8;
     font-weight: bold;
   }
 
@@ -61,9 +100,9 @@
   }
 
   .goal {
-    background: #e0f2fe;
+    background: rgba(56,189,248,0.1);
     padding: 15px;
-    border-left: 5px solid #0284c7;
+    border-left: 4px solid #38bdf8;
     border-radius: 8px;
     font-weight: 500;
   }
@@ -73,8 +112,8 @@
     padding: 20px;
     text-align: center;
     font-style: italic;
-    color: #475569;
-    border-top: 1px solid #e2e8f0;
+    color: #94a3b8;
+    border-top: 1px solid #334155;
   }
 
   @keyframes fadeIn {
@@ -98,31 +137,37 @@
     <h2>About Me</h2>
 
     <p class="intro">
-      Hello, I’m <span>Gumoshabe Angel Karungi</span>, an aspiring software engineer passionate about technology and problem-solving.
+      Hello, I’m <span>Gumoshabe Angel Karungi</span>, a passionate
+      Software Engineering and AI enthusiast.
     </p>
 
     <p>
-      My journey started with curiosity — I always wanted to understand how websites and applications work behind the scenes.
+      My journey started with curiosity — I wanted to understand how websites,
+      applications, and intelligent systems work behind the scenes.
     </p>
 
     <p>
-      I was raised by a <span>strong single mother</span> whose sacrifices and resilience shaped my mindset and taught me discipline and determination.
+      I was raised by a <span>strong single mother</span> whose resilience shaped my discipline,
+      focus, and determination in life.
     </p>
 
     <p>
-      I have been building skills in <span>HTML, CSS, JavaScript, and Python</span> while working on small projects that improve my understanding of real-world development.
+      I have been building skills in <span>HTML, CSS, JavaScript, Python, and AI basics</span>
+      while working on real projects that improve my understanding of software development.
     </p>
 
     <p>
-      Outside coding, I enjoy <span>travelling, spending time with friends and family, and learning new things</span> that help me grow.
+      Outside coding, I enjoy <span>travelling, learning new technologies, and spending time with family</span>
+      as part of my personal growth.
     </p>
 
     <p class="goal">
-      My goal is to become a full-stack developer who builds meaningful solutions that solve real problems and create impact.
+      My goal is to become a full-stack software engineer and AI developer who builds intelligent
+      systems that solve real-world problems and create meaningful impact.
     </p>
 
     <div class="quote">
-      “Success is built one small step at a time.”
+      “In technology, every small step builds a powerful future.”
     </div>
 
   </div>
